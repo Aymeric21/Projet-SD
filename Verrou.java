@@ -9,9 +9,9 @@ public class Verrou
 	
 	public void verrouiller() throws InterruptedException
 	{
+		//On attend le déverrouillage
 		while(this.estVerrouille())
 		{
-			//On attend le déverrouillage
 			//On met en pause le processus pendant x ms ( ici 10ms )
 			Thread.sleep(10);
 		}
@@ -19,7 +19,7 @@ public class Verrou
 		this.verrouille = true;
 	}
 	
-	public void deverouiller()
+	public void deverrouiller()
 	{
 		this.verrouille = false;
 	}
