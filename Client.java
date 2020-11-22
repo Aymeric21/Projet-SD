@@ -1,25 +1,21 @@
 public class Client implements Runnable
 {
-	private String nom;
-	private Compte compte;
+	private Compte c;
 	private int nbRetrait;
 	private int sommeARetirer;
-
-	public Client(String nom, Compte compte)
-	{
-		this.nom = nom;
-		this.compte = compte;
+	private String nom;
+	public Client(String nom, Compte c){
+	 this.nom=nom;
+	 this.c=c;
+    }
+    public void run()
+    {
+		 for(int i=1;i<=nbRetrait;i++)
+		  {
+			   c.retrait(sommeARetirer);
+			   c.afficherSolde();
+		  }
 	}
-	
-	public void run()
-	{
-		for(int i=0; i<nbRetrait; i++)
-		{
-			compte.retrait(sommeARetirer);
-			compte.afficherSolde();
-		}
-	}
-	
 	public void setNbRetrait(int nb)
 	{
 		this.nbRetrait = nb;
